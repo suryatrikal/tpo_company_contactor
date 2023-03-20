@@ -1,0 +1,55 @@
+<% layout('layouts/boilerplate')%>
+    <link rel="stylesheet" href="/css/calendar.css">
+    <style>
+        .blob-btn {
+            color: rgb(19, 11, 138);
+            opacity: 0.8;
+        }
+
+        .blob-btn:before {
+            border-color: rgb(19, 11, 138);
+            opacity: 0.8;
+        }
+
+        .blob-btn__blob {
+            background: rgb(19, 11, 138);
+        }
+
+        main {
+            background-image: url("https://res.cloudinary.com/djhcnbsvg/image/upload/v1639242139/TPO-Website/EventsBg_l5iznc.jpg");
+            background-repeat: repeat;
+        }
+
+        @media only screen and (max-width : 466px) {
+            #calendar {
+                max-width: 100%;
+            }
+
+        }
+    </style>
+    <script>
+        const events =<%- JSON.stringify(events) %>;
+        const main = document.getElementsByClassName("container mt-5");
+        main[0].setAttribute("class", "");
+    </script>
+    <div class="container">
+        <div id="calendar" class="mb-5 mt-5"></div>
+        <div class="d-flex justify-content-center buttons mt-2 mb-5">
+            <% if(currentUser.email==='tpowebsite2021@gmail.com' ){ %>
+                <a href="/events/new" class="blob-btn" style="text-decoration: none;">
+                    Add New Event
+                    <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                        </span>
+                    </span>
+                </a>
+                <% } %>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="/javascripts/calendar.js"></script>

@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate')%>
+    <form action="/events" method="POST" class="validated-form mb-5" novalidate>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label class="form-label" for="name">Event Name</label>
+                    <input class="form-control" type="text" id="name" name="event[name]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <p>
+                        <textarea class="form-control" name="event[description]" id="description" cols="30" rows="10"
+                            placeholder="Event Description"></textarea>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label class="form-label" for="date">Event Date</label>
+                    <input type="date" class="form-control" name="event[date]" id="date">
+                </div>
+
+                <div class="col-6 mb-3">
+                    <label class="form-label" for="time">Event Time</label>
+                    <input class="form-control" type="time" id="time" name="event[time]">
+                </div>
+            </div>
+            <div class="buttons mt-2">
+                <button class="blob-btn">
+                    Add Event
+                    <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+    </form>
